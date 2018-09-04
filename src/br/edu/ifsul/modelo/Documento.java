@@ -30,20 +30,16 @@ public class Documento implements Serializable {
     @SequenceGenerator(name = "seq_documento", sequenceName = "seq_documento_id", allocationSize = 1)
     @GeneratedValue(generator = "seq_documento", strategy = GenerationType.SEQUENCE)    
     private Integer id;
-    @NotNull(message = "Data da revisão não pode ser nula")
     @Temporal(TemporalType.DATE)
-    @Column(name = "dataRevisao", nullable = false)
+    @Column(name = "dataRevisao")
     private Calendar dataRevisao;
-    @NotNull(message = "Data da versão não pode ser nula")
     @Temporal(TemporalType.DATE)
-    @Column(name = "dataVersao", nullable = false)
+    @Column(name = "dataVersao")
     private Calendar dataVersao;
-    @NotNull(message = "A versão atual deve ser informada")
-    @Column(name = "versaoAtual", nullable = false)
+    @Column(name = "versaoAtual")
     @Lob
     private byte[] versaoAtual;
-    @NotNull(message = "A revisão atual deve ser informada")
-    @Column(name = "revisao", nullable = false)
+    @Column(name = "revisao")
     @Lob
     private byte[] revisao;
     @NotNull(message = "A ficha não pode ser nula")

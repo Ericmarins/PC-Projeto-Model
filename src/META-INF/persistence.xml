@@ -2,6 +2,13 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="PC-ModelPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>br.edu.ifsul.modelo.Curso</class>
+    <class>br.edu.ifsul.modelo.Documento</class>
+    <class>br.edu.ifsul.modelo.Encontro</class>
+    <class>br.edu.ifsul.modelo.Ficha</class>
+    <class>br.edu.ifsul.modelo.Permissao</class>
+    <class>br.edu.ifsul.modelo.Tipo</class>
+    <class>br.edu.ifsul.modelo.Usuario</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5433/PC_Projeto"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>

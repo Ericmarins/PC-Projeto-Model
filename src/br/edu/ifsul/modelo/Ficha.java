@@ -47,20 +47,33 @@ public class Ficha implements Serializable {
     private List<Encontro> encontros = new ArrayList<>();
     @NotNull(message = "O professor não pode ser nulo")
     @ManyToOne
-    @JoinColumn(name = "usuario", referencedColumnName = "id", 
+    @JoinColumn(name = "professor", referencedColumnName = "id", 
             nullable = false, 
             foreignKey = @ForeignKey(name = "fk_professor_id"))
     private Usuario professor;
     @NotNull(message = "O aluno não pode ser nulo")
     @ManyToOne
-    @JoinColumn(name = "usuario", referencedColumnName = "id", 
+    @JoinColumn(name = "aluno", referencedColumnName = "id", 
             nullable = false, 
             foreignKey = @ForeignKey(name = "fk_aluno_id"))
     private Usuario aluno;
     @ManyToOne
-    @JoinColumn(name = "usuario", referencedColumnName = "id",
+    @JoinColumn(name = "coorientador", referencedColumnName = "id",
             foreignKey = @ForeignKey(name = "fk_coorientador_id"))
     private Usuario coorientador;
+    @OneToMany(mappedBy = "ficha", cascade = CascadeType.ALL, 
+            orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Documento> documentos = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "curso", referencedColumnName = "id", 
+            nullable = false, 
+            foreignKey = @ForeignKey(name = "fk_curso_id"))
+    private Curso curso;
+    @ManyToOne
+    @JoinColumn(name = "tipo", referencedColumnName = "id", 
+            nullable = false, 
+            foreignKey = @ForeignKey(name = "fk_tipo_id"))
+    private Tipo tipo;
 
     public Ficha() {
     }
@@ -72,6 +85,15 @@ public class Ficha implements Serializable {
     
     public void removerEncontro(int idx){
         this.getEncontros().remove(idx);
+    }
+    
+    public void adicionarDocumento(Documento obj){
+        obj.setFicha(this);
+        this.getDocumentos().add(obj);
+    }
+    
+    public void removerDocumento(int idx){
+        this.getDocumentos().remove(idx);
     }
     
     public Integer getId() {
@@ -153,6 +175,30 @@ public class Ficha implements Serializable {
 
     public void setCoorientador(Usuario coorientador) {
         this.coorientador = coorientador;
+    }
+
+    public List<Documento> getDocumentos() {
+        return documentos;
+    }
+
+    public void setDocumentos(List<Documento> documentos) {
+        this.documentos = documentos;
+    }
+
+    public Curso getCurso() {
+        return curso;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
     }
 
 
