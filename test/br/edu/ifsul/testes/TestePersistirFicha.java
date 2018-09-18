@@ -9,7 +9,6 @@ import br.edu.ifsul.modelo.Curso;
 import br.edu.ifsul.modelo.Documento;
 import br.edu.ifsul.modelo.Encontro;
 import br.edu.ifsul.modelo.Ficha;
-import br.edu.ifsul.modelo.Permissao;
 import br.edu.ifsul.modelo.Tipo;
 import br.edu.ifsul.modelo.Usuario;
 import java.io.ByteArrayOutputStream;
@@ -23,8 +22,6 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import sun.misc.IOUtils;
 
 /**
  *
