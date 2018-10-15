@@ -35,16 +35,14 @@ public class Encontro implements Serializable {
     @Column(name = "dia", nullable = false)
     private Calendar dia;
     @NotNull(message = "Data não pode ser nula")
-    @Temporal(TemporalType.DATE)
-    @Column(name = "inicial", nullable = false)
+    @Column(name = "inicial", nullable = false, columnDefinition = "time")
     private Calendar horaInicial;
     @NotNull(message = "O campo assuntos não pode ser nulo")
     @NotBlank(message = "O campo assuntos não pode ser em branco")
     @Column(name = "assuntos", nullable = false, columnDefinition = "text")
     private String assuntos;
     @NotNull(message = "Data não pode ser nula")
-    @Temporal(TemporalType.DATE)
-    @Column(name = "final", nullable = false)
+    @Column(name = "final", nullable = false, columnDefinition = "time")
     private Calendar horaFinal;
     @NotNull(message = "A ficha não pode ser nula")
     @ManyToOne
