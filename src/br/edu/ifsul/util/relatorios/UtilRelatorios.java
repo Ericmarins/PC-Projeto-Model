@@ -7,10 +7,12 @@ package br.edu.ifsul.util.relatorios;
 
 
 import br.edu.ifsul.modelo.Curso;
+import br.edu.ifsul.modelo.Encontro;
 import br.edu.ifsul.modelo.Ficha;
 import br.edu.ifsul.modelo.Tipo;
 import br.edu.ifsul.modelo.Usuario;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -37,25 +39,52 @@ public class UtilRelatorios {
         curso.setDescricao("teste");
         obj.setCurso(curso);
 
+        Encontro encontro= new Encontro();
+        encontro.setDia(Calendar.getInstance());
+        encontro.setHoraFinal(Calendar.getInstance());        
+        encontro.setHoraInicial(Calendar.getInstance());
+        encontro.setAssuntos("Assuntos tratados no encontro: Apresentação do que"
+                + " deve ser desenvolvido durante o PC1. Definição das tarefas "
+                + "para o próximo encontro. Tarefas para o próximo encontro: "
+                + "Desenvolver a primeira versão do relatório até o tópico"
+                + " Justificativa; Pesquisas sobre trabalhos relacionados;");
+        obj.getEncontros().add(encontro);
+        
+        Encontro encontro2= new Encontro();
+        encontro2.setDia(Calendar.getInstance());
+        encontro2.setHoraFinal(Calendar.getInstance());        
+        encontro2.setHoraInicial(Calendar.getInstance());
+        encontro2.setAssuntos("Assuntos tratados no encontro: Apresentação do que"
+                + " deve ser desenvolvido durante o PC1. Definição das tarefas "
+                + "para o próximo encontro. Tarefas para o próximo encontro: "
+                + "Desenvolver a primeira versão do relatório até o tópico"
+                + " Justificativa; Pesquisas sobre trabalhos relacionados;");
+        obj.getEncontros().add(encontro2);
+        
+        Encontro encontro3= new Encontro();
+        encontro3.setDia(Calendar.getInstance());
+        encontro3.setHoraFinal(Calendar.getInstance());        
+        encontro3.setHoraInicial(Calendar.getInstance());
+        encontro3.setAssuntos("Assuntos tratados no encontro: Apresentação do que"
+                + " deve ser desenvolvido durante o PC1. Definição das tarefas "
+                + "para o próximo encontro. Tarefas para o próximo encontro: "
+                + "Desenvolver a primeira versão do relatório até o tópico"
+                + " Justificativa; Pesquisas sobre trabalhos relacionados;");
+        obj.getEncontros().add(encontro3);
+        
+        Encontro encontro4= new Encontro();
+        encontro4.setDia(Calendar.getInstance());
+        encontro4.setHoraFinal(Calendar.getInstance());        
+        encontro4.setHoraInicial(Calendar.getInstance());
+        encontro4.setAssuntos("Assuntos tratados no encontro: Apresentação do que"
+                + " deve ser desenvolvido durante o PC1. Definição das tarefas "
+                + "para o próximo encontro. Tarefas para o próximo encontro: "
+                + "Desenvolver a primeira versão do relatório até o tópico"
+                + " Justificativa; Pesquisas sobre trabalhos relacionados;");
+        obj.getEncontros().add(encontro4);
+        
         lista.add(obj);
         
-        Ficha obj2 = new Ficha();
-        obj2.setSemestre("6° Semestre 2");
-        obj2.setTema("Sistema de gerenciamento dos encontros de orientação.2");
-        Usuario professor2= new Usuario();
-        professor2.setNome("Jorge2");
-        obj2.setProfessor(professor);
-        Usuario aluno2= new Usuario();
-        aluno2.setNome("Eric2");
-        obj2.setAluno(aluno);
-        Tipo tipo2= new Tipo();
-        tipo2.setDescricao("teste2");
-        obj2.setTipo(tipo);
-        Curso curso2= new Curso();
-        curso2.setDescricao("teste2");
-        obj2.setCurso(curso);
-        
-        lista.add(obj2);
 
         return lista;
     }
